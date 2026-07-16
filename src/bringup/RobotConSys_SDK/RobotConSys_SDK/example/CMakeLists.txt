@@ -1,0 +1,47 @@
+﻿project("TEST RobotConSys")
+
+include(${PROJECT_SOURCE_DIR}/platform.cmake)
+
+# 基本配置
+cmake_minimum_required(VERSION 2.8.4)
+set(CMAKE_CXX_FLAGS "-std=c++11 -fPIC")
+set(CMAKE_C_FLAGS "-fPIC")
+
+set(CMAKE_BUILD_TYPE Release)
+
+set(3RDLIB_HEAD "${PROJECT_SOURCE_DIR}/../include/3rdLib/" CACHE INTERNAL "3rdLib HEADER_FILE location")
+set(SYSLAYER_HEAD "${PROJECT_SOURCE_DIR}/../include/SystemLayer/" CACHE INTERNAL "SystemLayer HEADER_FILE location")
+set(DEVLAYER_HEAD "${PROJECT_SOURCE_DIR}/../include/DeviceLayer/" CACHE INTERNAL "DeviceLayer HEADER_FILE location")
+set(ROBSOFT_HEAD "${PROJECT_SOURCE_DIR}/../include/RobSoft/" CACHE INTERNAL "RobSoft HEADER_FILE location")
+set(ROBOTCONSYS_HEAD "${PROJECT_SOURCE_DIR}/../include/RobotConSys/" CACHE INTERNAL "RobotConSys HEADER_FILE location")
+set(ROBOTINTERPRETER_HEAD "${PROJECT_SOURCE_DIR}/../include/RobotInterpreter/" CACHE INTERNAL "RobotInterpreter HEADER_FILE location")
+include_directories(${3RDLIB_HEAD})
+include_directories(${SYSLAYER_HEAD})
+include_directories(${DEVLAYER_HEAD})
+include_directories(${ROBSOFT_HEAD})
+include_directories(${ROBOTCONSYS_HEAD})
+include_directories(${ROBOTINTERPRETER_HEAD})
+
+if(PLATFORM_LINUX_AARCH64)
+    set(SDK_LIBRARY "${PROJECT_SOURCE_DIR}/../lib/linux_aarch64/" CACHE INTERNAL "SDK Library location")
+elseif(PLATFORM_LINUX_X64)
+    set(SDK_LIBRARY "${PROJECT_SOURCE_DIR}/../lib/linux_x64/" CACHE INTERNAL "SDK Library location")
+elseif(PLATFORM_WINDOWS_X64)
+    set(SDK_LIBRARY "${PROJECT_SOURCE_DIR}/../lib/win_x64/" CACHE INTERNAL "SDK Library location")
+endif()
+link_directories(${SDK_LIBRARY})
+
+if(NOT PLATFORM_LINUX_AARCH64)
+    find_package(OpenCV REQUIRED)
+    add_executable(CamDevDemo CamDevDemo.cpp)
+    target_link_libraries(CamDevDemo SystemLayer)
+    target_link_libraries(CamDevDemo CamDev_Client)
+    target_link_libraries(CamDevDemo ${OpenCV_LIBS})
+    set_target_properties(CamDevDemo PROPERTIES LINK_FLAGS "-Wl,-rpath,.")
+endif()
+
+add_executable(RobotConSysDemo RobotConSysDemo.cpp)
+target_link_libraries(RobotConSysDemo SystemLayer)
+target_link_libraries(RobotConSysDemo TCPConDev_Client)
+target_link_libraries(RobotConSysDemo RobSoft)
+set_target_properties(RobotConSysDemo PROPERTIES LINK_FLAGS "-Wl,-rpath,.")

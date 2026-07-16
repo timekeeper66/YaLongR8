@@ -1,0 +1,12 @@
+<launch>
+
+    <!-- 设置环境变量 -->
+    <arg name="RCS_Lib" default="/home/nvidia/YaLongR8/src/bringup/RobotConSys_SDK/RobotConSys_SDK/lib/linux_aarch64/" />
+    <env name="LD_LIBRARY_PATH" value="$(env LD_LIBRARY_PATH):$(arg RCS_Lib)" />
+    <node pkg="robot_package" type="robotic_node" name ="robot_arm_driver_node" output="screen">
+        <param name="robot_arm_ip"            value="192.168.10.169" />
+        <param name="robot_arm_port"      value="8080"/>
+        <param name="robot_type"      value="0"/>
+        <param name="robot_client_lib_path"      value="$(arg RCS_Lib)libRobotConSys_Client.so" />
+    </node>
+</launch>

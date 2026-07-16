@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# 硬编码的命令菜单
+declare -A COMMANDS=(
+    [1]="保持当前目录正确|cd ~/YaLongR8"
+    [2]="(运行3,4之前必须)加载环境变量|source devel/setup.bash"
+    [3]="运行底盘驱动(发送命令之前必须)|roslaunch robot_package robot_start.launch"
+    [4]="开始发动车辆|rosrun start_game start.py"
+    [5]="编写参数|vim /home/nvidia/YaLongR8/src/bringup/start_game/scripts/start.py"
+)
+
+while true; do
+    echo -e "\n=== 命令菜单 ==="
+    for num in "${!COMMANDS[@]}"; do
+        IFS='|' read -ra item <<< "${COMMANDS[$num]}"
+        echo "$num. ${item[0]}"
+    done
+
+    read -p $'\n请选择: ' choice
+    
+    if [[ $choice == 5 ]]; then
+        vim /home/nvidia/YaLongR8/src/bringup/start_game/scripts/start.py
+        break
+    elif [[ -n "${COMMANDS[$choice]}" ]]; then
+        IFS='|' read -ra item <<< "${COMMANDS[$choice]}"
+        echo -e "\n执行: ${item[1]}\n"
+        eval "${item[1]}"
+    else
+        echo "无效输入"
+    fi
+done

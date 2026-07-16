@@ -1,0 +1,6 @@
+int8 arm_index
+bool clawState
+
+---
+int32 result
+string strRt

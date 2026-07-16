@@ -1,0 +1,7 @@
+sensor_msgs/Image image
+int8 armIndex
+float32[] position
+---
+float32[] terminal
+int32 result
+string strRt

@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<HI-Vehicle>
+    <g_controlType>4</g_controlType>
+    <g_vehicleType>2</g_vehicleType>
+    <g_wheelDistance>288.000000</g_wheelDistance>
+    <g_axisDistance>382.000000</g_axisDistance>
+    <g_targetx_max>1000.000000</g_targetx_max>
+    <g_targety_max>1000.000000</g_targety_max>
+    <g_targetz_max>3.141593</g_targetz_max>
+    <g_targetx_max_acc>1000.000000</g_targetx_max_acc>
+    <g_targety_max_acc>1000.000000</g_targety_max_acc>
+    <g_targetz_max_acc>3.141593</g_targetz_max_acc>
+    <g_wheelMotorInputMode>1</g_wheelMotorInputMode>
+    <g_wheelMotorVelMax>1500.000000</g_wheelMotorVelMax>
+    <g_wheelMotorAccMax>5000.000000</g_wheelMotorAccMax>
+    <g_wheelMotorVelResolution>256</g_wheelMotorVelResolution>
+    <g_wheelMotorAccResolution>256</g_wheelMotorAccResolution>
+    <g_wheelMotorDiameter>156.000000</g_wheelMotorDiameter>
+    <g_wheelMotorReduceRatio>6.000000</g_wheelMotorReduceRatio>
+    <g_wheelMotorDirection0>-1</g_wheelMotorDirection0>
+    <g_wheelMotorDirection1>1</g_wheelMotorDirection1>
+    <g_wheelMotorDirection2>-1</g_wheelMotorDirection2>
+    <g_wheelMotorDirection3>1</g_wheelMotorDirection3>
+    <g_servoMotorInputMode>2</g_servoMotorInputMode>
+    <g_servoMotorPosMin>-1.745329</g_servoMotorPosMin>
+    <g_servoMotorPosMax>3.141593</g_servoMotorPosMax>
+    <g_servoMotorVelMax>18.849556</g_servoMotorVelMax>
+    <g_servoMotorAccMax>62.831852</g_servoMotorAccMax>
+    <g_servoMotorPosResolution>65536</g_servoMotorPosResolution>
+    <g_servoMotorVelResolution>256</g_servoMotorVelResolution>
+    <g_servoMotorAccResolution>256</g_servoMotorAccResolution>
+    <g_servoMotorReduceRatio>6.000000</g_servoMotorReduceRatio>
+    <g_servoMotorDirection0>-1</g_servoMotorDirection0>
+    <g_servoMotorDirection1>1</g_servoMotorDirection1>
+    <g_servoMotorDirection2>1</g_servoMotorDirection2>
+    <g_servoMotorDirection3>-1</g_servoMotorDirection3>
+    <g_servoMotorOffset0>0</g_servoMotorOffset0>
+    <g_servoMotorOffset1>0</g_servoMotorOffset1>
+    <g_servoMotorOffset2>0</g_servoMotorOffset2>
+    <g_servoMotorOffset3>0</g_servoMotorOffset3>
+    <g_servoMotorOffsetAngle0>-1.919862</g_servoMotorOffsetAngle0>
+    <g_servoMotorOffsetAngle1>-1.919862</g_servoMotorOffsetAngle1>
+    <g_servoMotorOffsetAngle2>-1.919862</g_servoMotorOffsetAngle2>
+    <g_servoMotorOffsetAngle3>-1.919862</g_servoMotorOffsetAngle3>
+    <g_servoMotorCalibrateTorque>-200</g_servoMotorCalibrateTorque>
+    <g_canMotorEnable>1</g_canMotorEnable>
+</HI-Vehicle>

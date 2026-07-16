@@ -1,0 +1,10 @@
+
+    int16 ppsSyncStamp
+    int8 temprature
+    float32 pressure
+    uint32 timestamp
+    float32[] acc
+    float32[] gyr
+    float32[] mag
+    float32[] eul
+    float32[] quat

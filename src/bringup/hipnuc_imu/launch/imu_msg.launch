@@ -1,0 +1,12 @@
+<launch>
+	<node pkg="hipnuc_imu" name="hipnuc_imu_msg" type="hipnuc_imu_msg" >
+		<rosparam command="load" file="$(find hipnuc_imu)/config/hipnuc_config.yaml" />
+
+	</node>
+
+	<node pkg="hipnuc_imu" name="sub_spec" type="sub_spec" output="screen"  >
+
+
+	</node>
+
+</launch>

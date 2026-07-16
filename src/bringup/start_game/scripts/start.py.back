@@ -1,0 +1,63 @@
+#!/usr/bin/python
+# coding: utf-8
+import rospy
+from geometry_msgs.msg import Twist
+import time
+class Controller:
+    def __init__(self):
+        rospy.init_node('start_game_game',anonymous=True)
+        self.velocity_publisher = rospy.Publisher('/cmd_vel',Twist,queue_size=10)
+        self.rate = rospy.Rate(10)
+        self.vel_msg = Twist()
+
+    def move(self,linear_x ,angular_z , duration):
+        self.vel_msg.linear.x = linear_x
+        self.vel_msg.linear.y = 0
+        self.vel_msg.linear.z = 0
+        self.vel_msg.angular.x = 0
+        self.vel_msg.angular.y = 0
+        self.vel_msg.angular.z = angular_z
+        it = int(duration*10)
+        for i in range(it):
+            self.velocity_publisher.publish(self.vel_msg)
+            self.rate.sleep()
+
+        self.stop_move()
+    def stop_move(self):
+        self.vel_msg.linear.x = 0
+        self.vel_msg.angular.z = 0
+        self.velocity_publisher.publish(self.vel_msg)
+        rospy.loginfo("+++++++++++[Robot Stopped]+++++++++++")
+
+if __name__ == "__main__":
+    try:
+        ctl = Controller()
+        rospy.loginfo("+++++++++++[   move to  1   ]+++++++++++")
+        ctl.move(0.5,0,6.5)
+
+        time.sleep(1)
+
+        rospy.loginfo("+++++++++++[    turn to 2      ]+++++++++++")
+        ctl.move(0,-0.5,3)
+
+        rospy.loginfo("+++++++++++[    move to 2      ]+++++++++++")
+        ctl.move(0.5,0,6.9)
+        
+        time.sleep(1)
+
+        rospy.loginfo("+++++++++++[    turn to c      ]+++++++++++")
+        ctl.move(0,0.5,2.8)
+
+        rospy.loginfo("+++++++++++[   move to  c   ]+++++++++++")
+        ctl.move(0.5,0,5.5)
+
+        rospy.loginfo("+++++++++++[   turn around   ]+++++++++++")
+        ctl.move(0,0.5,7.6)
+        time.sleep(4)
+
+        rospy.loginfo("+++++++++++[   go home ...   ]+++++++++++")
+        ctl.move(0.5,0,17.2)
+
+    except rospy.ROSInterruptException:
+        rospy.loginfo("fail")
+

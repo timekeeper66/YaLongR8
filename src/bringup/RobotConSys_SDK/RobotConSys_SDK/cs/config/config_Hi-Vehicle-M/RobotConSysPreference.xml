@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<robotconsys_preference>
+    <m_robotName>HI_VEHICLE_MECANUM_QUATTRO</m_robotName>
+    <m_robotModel>36</m_robotModel>
+    <m_robotDevType>0</m_robotDevType>
+    <m_robotDevPeriod_us>10000</m_robotDevPeriod_us>
+    <m_robotDevChannelNum>0</m_robotDevChannelNum>
+    <m_ioEnable>0</m_ioEnable>
+    <m_nDI>16</m_nDI>
+    <m_nDO>16</m_nDO>
+    <m_nAI>2</m_nAI>
+    <m_nAO>2</m_nAO>
+    <m_motionIOEnable>1</m_motionIOEnable>
+    <m_nMotionDI>0</m_nMotionDI>
+    <m_nMotionDO>2</m_nMotionDO>
+    <m_nMotionAI>0</m_nMotionAI>
+    <m_nMotionAO>0</m_nMotionAO>
+    <m_estopEnable>1</m_estopEnable>
+    <m_modbusSlavePort>502</m_modbusSlavePort>
+    <m_vehicleDevChannelNum>1</m_vehicleDevChannelNum>
+    <m_vehicleDevType>0</m_vehicleDevType>
+    <m_vehicleDevPeriod_us>100000</m_vehicleDevPeriod_us>
+    <m_vehicleDevIP>127.0.0.1</m_vehicleDevIP>
+    <m_vehicleDevPort>0</m_vehicleDevPort>
+    <m_vehicleDevIMUOnBoardEnable>1</m_vehicleDevIMUOnBoardEnable>
+    <m_initPlayState>0</m_initPlayState>
+</robotconsys_preference>

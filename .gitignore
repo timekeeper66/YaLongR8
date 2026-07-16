@@ -1,0 +1,49 @@
+# ============ ROS Catkin Workspace ============
+build/
+devel/
+catkin_ws/
+
+# ============ Compilation artifacts ============
+*.o
+*.a
+*.so
+*.dll
+*.lib
+*.dylib
+
+# ============ CMake ============
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+*.cmake
+
+# ============ Python ============
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ============ ROS ============
+.ros/
+*.rosinstall
+
+# ============ IDE ============
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ============ System ============
+.DS_Store
+Thumbs.db
+
+# ============ Logs ============
+*.log
+
+# ============ Temporary ============
+*.tmp
+*.bak

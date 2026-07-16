@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<robot_preference>
+    <m_jointInitPosition>
+        <JOINT1>0</JOINT1>
+        <JOINT2>0</JOINT2>
+        <JOINT3>0</JOINT3>
+        <JOINT4>0</JOINT4>
+    </m_jointInitPosition>
+    <m_jointCompensation>
+        <JOINT1>0</JOINT1>
+        <JOINT2>0</JOINT2>
+        <JOINT3>0</JOINT3>
+        <JOINT4>0</JOINT4>
+    </m_jointCompensation>
+    <m_jointSearchSequence>
+        <JOINT1>1</JOINT1>
+        <JOINT2>2</JOINT2>
+        <JOINT3>3</JOINT3>
+        <JOINT4>4</JOINT4>
+    </m_jointSearchSequence>
+    <m_channelIndex>0</m_channelIndex>
+    <m_masterIndex>0</m_masterIndex>
+    <m_masterIDStart>0</m_masterIDStart>
+    <m_clawEnable>0</m_clawEnable>
+    <m_clawType>0</m_clawType>
+    <m_clawMasterIndex>0</m_clawMasterIndex>
+    <m_clawID>15</m_clawID>
+    <m_clawVelOutput>10</m_clawVelOutput>
+    <m_clawVelRamp>20</m_clawVelRamp>
+    <m_clawTorLimit>0.1</m_clawTorLimit>
+    <m_clawPosResolution>16384</m_clawPosResolution>
+    <m_clawVelResolution>256</m_clawVelResolution>
+    <m_clawTorResolution>1000</m_clawTorResolution>
+    <m_clawReduceRatio>1</m_clawReduceRatio>
+    <m_clawPitch>1</m_clawPitch>
+</robot_preference>
